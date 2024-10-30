@@ -1,0 +1,25 @@
+const handleAddTask =(text) => {
+  setTasks([
+    ...tasks,
+    {
+      id:tasks.length+1,
+      text:text,
+    }
+  ])
+}
+
+const handleEditTask = (task) => {
+ setTasks(tasks.map(t => {
+  if (t.id===task.id){
+    return task;
+  }else{
+    return t;
+  }
+ }))
+ 
+}
+
+const handleDeleteTask = (id) => {
+   setTasks(tasks.filter(task => task.id !==id))
+   
+}
